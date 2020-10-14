@@ -10,7 +10,7 @@
 - name: Create Domain
   win_domain:
     dns_domain_name: "{{ ad_domain_name }}"
-    safe_mode_password: "{{ safe_password }}"
+    safe_mode_password: "{{ ad_safe_mode_password }}"
 
 - name: Reboot DC
   win_reboot:

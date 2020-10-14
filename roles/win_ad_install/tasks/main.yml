@@ -11,6 +11,7 @@
   win_domain:
     dns_domain_name: "{{ ad_domain_name }}"
     safe_mode_password: "{{ ad_safe_mode_password }}"
+  register: active_directory_controllers
 
 - name: Reboot DC
   win_reboot:

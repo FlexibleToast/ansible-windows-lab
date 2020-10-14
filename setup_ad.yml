@@ -1,0 +1,6 @@
+- name: Setup a Windows Domain
+  hosts: windows
+  become: true
+
+  roles:
+  - role: win_ad_install

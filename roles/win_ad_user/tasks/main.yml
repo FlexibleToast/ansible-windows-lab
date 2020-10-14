@@ -1,0 +1,23 @@
+---
+# tasks file for roles/win_ad_user
+- name: Create domain groups
+  win_domain_group:
+    name: "{{ __group.group_name }}"
+    scope: "{{ __group.group_scop }}"
+    state: present
+  loop: "{{ user_info }}"
+  loop_control:
+    loop_var: __group
+
+- name: Create domain users
+  win_domain_user:
+    name: "{{ __user.name }}"
+    firstname: "{{ __user.firstname }}"
+    surname: "{{ __user.surname }}"
+    password: "{{ __user.password }}"
+    email: "{{ __user.email }}"
+    groups: "{{ __user.group_name }}"
+    state: present
+  loop: "{{ user_info }}"
+  loop_control:
+    loop_var: __user

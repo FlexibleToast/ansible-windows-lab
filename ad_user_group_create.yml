@@ -1,0 +1,8 @@
+---
+- name: Create users and groups
+  hosts: windows
+  gather_facts: no
+  vars_files: users.yml
+
+  roles:
+  - role: win_ad_user

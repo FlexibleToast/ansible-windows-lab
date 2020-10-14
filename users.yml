@@ -1,0 +1,29 @@
+user_info:
+- name: james
+  firstname: James
+  surname: Jockey
+  password: redhat@123
+  email: james@ad1.{{ lab_guid }}.example.opentlc.com
+  group_name: dev
+  group_scop: domainlocal
+- name: bill
+  firstname: Bill
+  surname: Gates
+  password: redhat@123
+  email: bill@ad1.{{ lab_guid }}.example.opentlc.com
+  group_name: dev
+  group_scop: domainlocal
+- name: mickey
+  firstname: Mickey
+  surname: Mouse
+  password: redhat@123
+  email: mickey@ad1.{{ lab_guid }}.example.opentlc.com
+  group_name: qa
+  group_scop: domainlocal
+- name: donald
+  firstname: Donald
+  surname: Duck
+  password: redhat@123
+  email: donald@ad1.{{ lab_guid }}.example.opentlc.com
+  group_name: qa
+  group_scop: domainlocal

@@ -1,7 +1,6 @@
 ---
 - name: Install SSH server for Windows
   hosts: windows
-  gather_facts: no
   vars_files: ssh_var.yml
 
   roles: 

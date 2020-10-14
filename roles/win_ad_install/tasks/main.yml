@@ -3,6 +3,8 @@
 - name: Add AD Domain Services features
   win_feature:
     name: AD-Domain-Services
+    include_management_tools: yes
+    inlcude_sub_features: yes
     state: present
 
 - name: Create Domain
@@ -10,3 +12,13 @@
     dns_domain_name: "{{ ad_domain_name }}"
     safe_mode_password: "{{ safe_password }}"
 
+- name: Reboot DC
+  win_reboot:
+  when: active_directory_controllers.reboot_required
+
+- win_shell: "nltest /dclist:{{ ad_domain_name }}"
+  register: domain_list
+
+- name: Domain List
+  debug:
+    var: domain_list

@@ -1,3 +1,0 @@
-ad_domain_name: ad1.{{ lab_guid }}.example.opentlc.com
-safe_password: "{{ vault_safe_password }}"
-ad_admin_user: admin@{{ ad_domain_name }}
